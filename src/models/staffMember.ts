@@ -1,4 +1,5 @@
 import { prop, Ref } from "@typegoose/typegoose";
+import { Department } from "./department";
 
 import { StaffRole } from "./staffRole";
 
@@ -13,5 +14,8 @@ export class StaffMember {
   public salary!: number;
 
   @prop({ required: true, ref: () => StaffRole })
-  public role!: Ref<StaffRole>[];
+  public role!: Ref<StaffRole>;
+
+  @prop({ required: true, ref: () => Department })
+  public department!: Ref<Department>
 }

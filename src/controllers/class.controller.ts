@@ -1,6 +1,6 @@
 import express from "express";
 import { HTTPRESPONSESTATUS } from "../libs/constants";
-import { HttpError } from "../libs/error/customErrors";
+import { HttpError } from "../libs/customErrors";
 import { ResponseBody, responseHandler } from "../libs/express/expressHandler";
 import handleError from "../libs/express/handleError";
 import { ClassService } from "../services/class.service";
@@ -15,7 +15,6 @@ export class ClassController {
         body: result.map((classResult) => classResult.toJSON()),
       };
 
-      res.json(response);
       return responseHandler(res, response, 200);
     } catch (error) {
       return handleError(error, res);

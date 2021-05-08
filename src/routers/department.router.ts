@@ -1,4 +1,5 @@
 import express, { Router } from "express";
+import { DepartmentController } from "../controllers";
 
 export class deparmtmentRouter {
   public static router(): Router {
@@ -17,31 +18,31 @@ export class deparmtmentRouter {
 
   private static listdeparmtments(): express.RequestHandler[] {
     return [
-
+      DepartmentController.listDepartmentsHandler
     ];
   }
 
   private static createdeparmtment(): express.RequestHandler[] {
     return [
-
+      DepartmentController.createDepartmentHandler
     ];
   }
 
   private static getdeparmtment(): express.RequestHandler[] {
     return [
-
+      DepartmentController.getByIdHandler
     ];
   }
 
   private static updatedeparmtment(): express.RequestHandler[] {
     return [
-
+      DepartmentController.updateByIdHandler
     ];
   }
 
   private static deletedeparmtment(): express.RequestHandler[] {
     return [
-
+      DepartmentController.deleteByIdHandler
     ];
   }
 }

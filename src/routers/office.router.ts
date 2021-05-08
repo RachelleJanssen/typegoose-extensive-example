@@ -1,4 +1,5 @@
 import express, { Router } from "express";
+import { OfficeController } from "../controllers";
 
 export class OfficeRouter {
   public static router(): Router {
@@ -17,31 +18,31 @@ export class OfficeRouter {
 
   private static listOffices(): express.RequestHandler[] {
     return [
-
+      OfficeController.listOfficesHandler
     ];
   }
 
   private static createOffice(): express.RequestHandler[] {
     return [
-
+      OfficeController.createOfficeHandler
     ];
   }
 
   private static getOffice(): express.RequestHandler[] {
     return [
-
+      OfficeController.getByIdHandler
     ];
   }
 
   private static updateOffice(): express.RequestHandler[] {
     return [
-
+      OfficeController.updateByIdHandler
     ];
   }
 
   private static deleteOffice(): express.RequestHandler[] {
     return [
-
+      OfficeController.deleteByIdHandler
     ];
   }
 }

@@ -3,7 +3,7 @@ import {
 } from "express";
 import handleError from "./express/handleError";
 
-import { HttpError } from "./error/customErrors";
+import { HttpError } from "./customErrors";
 
 /**
  * Function that returns a new 404 error

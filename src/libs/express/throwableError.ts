@@ -1,4 +1,4 @@
-import { HttpError } from "../error/customErrors";
+import { HttpError } from "../customErrors";
 
 /**
  * Returns a custom error object

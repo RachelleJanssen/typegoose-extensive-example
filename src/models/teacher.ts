@@ -1,5 +1,6 @@
 import { prop, Ref } from "@typegoose/typegoose";
 import { Course } from "./course";
+import { Office } from "./office";
 
 export class Teacher {
   @prop({ required: true })
@@ -13,4 +14,7 @@ export class Teacher {
 
   @prop({ required: true, ref: () => Course })
   public courses!: Ref<Course>[]
+
+  @prop({ required: true, ref: () => Office })
+  public office!: Ref<Office>[]
 }

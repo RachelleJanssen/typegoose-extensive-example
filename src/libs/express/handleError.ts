@@ -4,7 +4,7 @@ import { log } from "../logging/logger";
 import { ResponseBody, responseHandler } from "./expressHandler";
 
 import { isDev } from "../../env";
-import { HttpError } from "../error/customErrors";
+import { HttpError } from "../customErrors";
 import throwableError from "./throwableError";
 import { HTTPRESPONSESTATUS } from "../constants";
 
@@ -21,6 +21,8 @@ export declare type ErrorResponseBody = {
  * @param {string} format The format to display the response, by default shows in application/json format
  */
 export default async function handleError(err: Error | HttpError, res: Response): Promise<void> {
+  console.log(err instanceof HttpError);
+
   const error = !(err instanceof HttpError) ? throwableError(err) : err;
   const response: ResponseBody = {
     status: HTTPRESPONSESTATUS.ERROR,

@@ -1,4 +1,5 @@
 import express, { Router } from "express";
+import { CourseController } from "../controllers";
 
 export class CourseRouter {
   public static router(): Router {
@@ -17,31 +18,31 @@ export class CourseRouter {
 
   private static listCourses(): express.RequestHandler[] {
     return [
-
+      CourseController.listCoursesHandler
     ];
   }
 
   private static createCourse(): express.RequestHandler[] {
     return [
-
+      CourseController.createCourseHandler
     ];
   }
 
   private static getCourse(): express.RequestHandler[] {
     return [
-
+      CourseController.getByIdHandler
     ];
   }
 
   private static updateCourse(): express.RequestHandler[] {
     return [
-
+      CourseController.updateByIdHandler
     ];
   }
 
   private static deleteCourse(): express.RequestHandler[] {
     return [
-
+      CourseController.deleteByIdHandler
     ];
   }
 }

@@ -1,4 +1,5 @@
 import express, { Router } from "express";
+import { StaffRoleController } from "../controllers";
 
 export class StaffRoleRouter {
   public static router(): Router {
@@ -17,31 +18,31 @@ export class StaffRoleRouter {
 
   private static listStaffRoles(): express.RequestHandler[] {
     return [
-
+      StaffRoleController.listStaffRolesHandler
     ];
   }
 
   private static createStaffRole(): express.RequestHandler[] {
     return [
-
+      StaffRoleController.createStaffRoleHandler
     ];
   }
 
   private static getStaffRole(): express.RequestHandler[] {
     return [
-
+      StaffRoleController.getByIdHandler
     ];
   }
 
   private static updateStaffRole(): express.RequestHandler[] {
     return [
-
+      StaffRoleController.updateByIdHandler
     ];
   }
 
   private static deleteStaffRole(): express.RequestHandler[] {
     return [
-
+      StaffRoleController.deleteByIdHandler
     ];
   }
 }
